@@ -3,6 +3,7 @@ import time, os
 yel = "\033[33m" # [Amarillo] Bloques (print, input, etc)
 syel = "\033[93m" # [Amarillo brillante] Parentesis
 cya = "\033[36m" # [Cyan] Variables
+ble = "\033[34m" # [Azul oscuro] Funciones
 sgrn = "\033[92m" # [Verde Brillante] Numeros
 orn = "\033[38;5;94m" # [Naranja] Texto
 b_border = '\033[34m' # Borde azul
@@ -12,7 +13,7 @@ reset = '\033[0m' # Resetear colores
 grs = '\033[90m' # Gris oscuro
 
 def func_1(rounded_box):
-    os.system("cls")
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("  ____            _                     _        _____       _   _                 ")
     print(" |  _ \          (_)                   | |      |  __ \     | | | |                ")
     print(" | |_) | __ _ ___ _  ___ ___  ___    __| | ___  | |__) |   _| |_| |__   ___  _ __  ")
@@ -28,7 +29,7 @@ def func_1(rounded_box):
     print()
     option = input("> ")
     if option == "1": 
-        os.system("cls")
+        os.system('cls' if os.name == 'nt' else 'clear')
         rounded_box([f"{grs}El bloque print() es usado para mostrar información en la consola.",
                      f"{grs}Puede mostrar texto, números y variables."], g_border)
         time.sleep(2)
@@ -43,7 +44,7 @@ def func_1(rounded_box):
         input("Presiona Enter para continuar...")
         func_1(rounded_box)
     elif option == "2":
-        os.system("cls")
+        os.system('cls' if os.name == 'nt' else 'clear')
         rounded_box([f"{grs}El bloque input() es usado para recibir información del usuario.",
                  f"{grs}Puede recibir texto, números y variables."], g_border)
         time.sleep(2)

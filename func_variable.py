@@ -3,6 +3,7 @@ import time, os
 yel = "\033[33m" # [Amarillo] Bloques (print, input, etc)
 syel = "\033[93m" # [Amarillo brillante] Parentesis
 cya = "\033[36m" # [Cyan] Variables
+ble = "\033[34m" # [Azul oscuro] Funciones
 sgrn = "\033[92m" # [Verde Brillante] Numeros
 orn = "\033[38;5;94m" # [Naranja] Texto
 b_border = '\033[34m' # Borde azul
@@ -12,13 +13,13 @@ reset = '\033[0m' # Resetear colores
 grs = '\033[90m' # Gris oscuro
 
 def func_variable(rounded_box):
-    os.system("cls")
-    print(" __      __        _       _     _            ")
-    print(" \ \    / /       (_)     | |   | |           ")
-    print("  \ \  / /_ _ _ __ _  __ _| |__ | | ___  ___  ")
-    print("   \ \/ / _` | '__| |/ _` | '_ \| |/ _ \/ __| ")
-    print("    \  / (_| | |  | | (_| | |_) | |  __/\__ \ ")
-    print("     \/ \__,_|_|  |_|\__,_|_.__/|_|\___||___/ ")
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(r" __      __        _       _     _            ")
+    print(r" \ \    / /       (_)     | |   | |           ")
+    print(r"  \ \  / /_ _ _ __ _  __ _| |__ | | ___  ___  ")
+    print(r"   \ \/ / _` | '__| |/ _` | '_ \| |/ _ \/ __| ")
+    print(r"    \  / (_| | |  | | (_| | |_) | |  __/\__ \ ")
+    print(r"     \/ \__,_|_|  |_|\__,_|_.__/|_|\___||___/ ")
     print()
     print("[1] ¿Que son?")
     print("[2] Tipos de datos")
@@ -31,7 +32,7 @@ def func_variable(rounded_box):
     print()
     option = input("> ")
     if option == "1":
-        os.system("cls")
+        os.system('cls' if os.name == 'nt' else 'clear')
         rounded_box([f"{grs}Una variable es un contenedor para almacenar datos que se pueden usar en un programa.",
                      f"{grs}Puedes pensar en una variable como una etiqueta para un valor"],g_border)
         print()
@@ -49,7 +50,7 @@ def func_variable(rounded_box):
         input("Presiona Enter para continuar...")
         func_variable(rounded_box)
     elif option == "2":
-        os.system("cls")
+        os.system('cls' if os.name == 'nt' else 'clear')
         rounded_box([f"{grs}En Python hay 3 tipos de datos:",
                      f"{grs}int = Número entero",
                      f"{grs}str = Cadena de texto",
@@ -74,7 +75,7 @@ def func_variable(rounded_box):
         time.sleep(1)
         input("Presiona Enter para continuar...")
         
-        os.system("cls")
+        os.system('cls' if os.name == 'nt' else 'clear')
         rounded_box([f"{grs}Puedes sacar el tipo de dato de una variable",
                         f"{grs}usando type()"], g_border)
         time.sleep(1)
@@ -95,104 +96,137 @@ def func_variable(rounded_box):
         input("Presiona Enter para continuar...")
         func_variable(rounded_box)
     elif option == "3":
-        print("Puedes asignar multiples variables en una sola linea")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        rounded_box([f"{grs}Puedes asignar multiples variables en una sola linea"], g_border)
         time.sleep(1)
         print()
-        print("a, b, c = 5, 3.2, 'Hello'")
-        print("print(a)  --> Nos dará 5")
-        print("print(b)  --> Nos dará 3.2")
-        print("print(c)  --> Nos dará 'Hello'")
+        rounded_box([f"{cya}a{reset}, {cya}b{reset}, {cya}c {reset}= {sgrn}5{reset}, {sgrn}3.2{reset}, {orn}'Hello'",
+                     "",
+                     f"{yel}print{syel}({cya}a{syel})",
+                     f"{grs}# Nos dará 5",
+                     "",
+                     f"{yel}print{syel}({cya}b{syel})",
+                     f"{grs}# Nos dará 3.2",
+                     "",
+                     f"{yel}print{syel}({cya}c{syel})",
+                     f"{grs}#Nos dará 'Hello'"], b_border)
         time.sleep(1)
         print()
         input("Presiona Enter para continuar...")
         func_variable(rounded_box)
     elif option == "4":
-        print("Puedes asignar multiples variables con el mismo valor")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        rounded_box([f"{grs}Puedes asignar multiples variables con el mismo valor"], g_border)
         time.sleep(1)
         print()
-        print("x = y = z = 'Same'")
-        print("print(x)  --> Nos dará 'Same'")
-        print("print(y)  --> Nos dará 'Same'")
-        print("print(z)  --> Nos dará 'Same'")
+        rounded_box([f"{cya}x {reset}= {cya}y {reset}= {cya}z {reset}= {orn}'Same'",
+                     "",
+                     f"{yel}print{syel}({cya}x{syel})",
+                     f"{grs}# Nos dará 'Same'",
+                     "",
+                     f"{yel}print{syel}({cya}y{syel})",
+                     f"{grs}# Nos dará 'Same'",
+                     "",
+                     f"{yel}print{syel}({cya}z{syel})",
+                     f"{grs}# Nos dará 'Same'"], b_border)
         time.sleep(1)
         print()
         input("Presiona Enter para continuar...")
         func_variable(rounded_box)
     elif option == "5":
-        print("Puedes asignar multiples variables en una sola linea")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        rounded_box([f"{grs}Puedes asignar multiples variables en una sola linea"], g_border)
         time.sleep(1)
         print()
-        print("fruits = ['apple', 'banana', 'cherry']")
-        print("a, b, c = fruits")
-        print("print(a)  --> Nos dará 'apple'")
-        print("print(b)  --> Nos dará 'banana'")
-        print("print(c)  --> Nos dará 'cherry'")
+        rounded_box([f"{cya}fruits {reset}= {syel}[{orn}'apple'{reset}, {orn}'banana'{reset}, {orn}'cherry'{syel}]",
+                     "",
+                     f"{cya}a{reset}, {cya}b{reset}, {cya}c {reset}= {cya}fruits",
+                     "",
+                     f"{yel}print{syel}({cya}a{syel})",
+                     f"{grs}# Nos dará 'apple'",
+                     ""
+                     f"{yel}print{syel}({cya}b{syel})",
+                     f"{grs}# Nos dará 'banana'",
+                     ""
+                     f"{yel}print{syel}({cya}b{syel})",
+                     f"{grs}# Nos dará 'cherry'"], b_border)
         time.sleep(1)
         print()
         input("Presiona Enter para continuar...")
         func_variable(rounded_box)
     elif option == "6":
-        print("Puedes sumar variables")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        rounded_box([f"{grs}Puedes sumar variables"], g_border)
         time.sleep(1)
         print()
-        print("x = 5")
-        print("y = 8")
-        print("z = 'hola'")
-        print("print(x + y)  --> Nos dará 13")
-        print("print(z + z + str(x))  --> Nos dará 'hola hola 5' (No se puede sumar un str con un int)")
-        print("print(x, y, z)  --> Nos dará 5 8 hola")
+        rounded_box([f"{cya}x {reset}= {sgrn}5",
+                     f"{cya}y {reset}= {sgrn}8",
+                     f"{cya}z {reset}= {orn}'hola'",
+                     "",
+                     f"{yel}print{syel}({cya}x {reset}+ {cya}y{syel})",
+                     f"{grs}# Nos dará 13",
+                     "",
+                     f"{yel}print{syel}({cya}z {reset}+ {cya}z {reset}+ {sgrn}str{syel}({cya}x{syel}))",
+                     f"{grs}# Nos dará 'hola hola 5' (No se puede sumar un str con un int)",
+                     "",
+                     f"{yel}print{syel}({cya}x{reset}, {cya}y{reset}, {cya}z{syel})",
+                     f"{grs}# Nos dará 5 8 hola"], b_border)
         time.sleep(1)
         print()
         input("Presiona Enter para continuar...")
         func_variable(rounded_box)
     elif option == "7":
-        os.system("cls")
-        print("Si determinas una variable fuera de una función,")
-        print("podras usarlo en cualquier parte del codigo")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        rounded_box([f"{grs}Si determinas una variable fuera de una función,",
+                     f"{grs}podras usarlo en cualquier parte del codigo"], g_border)
         print()
         time.sleep(2)
-        print("Ejemplo:")
-        print("x = 'Fantastico'")
-        print("def myfunc()")
-        print("  print('Python es' + x)")
-        print("")
-        print("myfunc()")
-        print()
+        rounded_box([f"{cya}x {reset}= {orn}'Fantastico'",
+                     "",
+                     f"{ble}def {yel}myfunc{syel}()",
+                     f"   {yel}print{syel}({orn}'Python es ' {reset}+ {cya}x{syel})",
+                     "",
+                     f"{yel}myfunc{syel}()",
+                     f"{grs}# Nos dará 'Python es Fantastico', ya que la variable esta fuera de la función"], b_border)
         print()
         input("Presiona Enter para continuar...")
-        os.system("cls")
-        print("Con esta información, podriamos hacer dos variables con el mismo nombre, una")
-        print("dentro de una funcion y otra global")
+
+        os.system('cls' if os.name == 'nt' else 'clear')
+        rounded_box([f"{grs}Con esta información, podriamos hacer dos variables con el mismo nombre, una",
+                     f"{grs}dentro de una función y otra fuera"], g_border)
         print()
         time.sleep(2)
-        print("Ejemplo:")
-        print("x = Horrible")
-        print()
-        print("def myfunc()")
-        print("   x = Maravilloso")
-        print("   print('Python es ' + x)   # Este sacará Maravilloso, ya que la variable x dentro de la funcion es Maravilloso")
-        print()
-        print("myfunc()")
-        print()
-        print("print('Python es ' + x)   # Este sacará Horrible, ya que la variable x es global")
+        rounded_box([f"{cya}x {reset}= {orn}'Horrible'",
+                     "",
+                     f"{ble}def {yel}myfunc{syel}()",
+                     f"    {cya}x {reset}= {orn}'Maravilloso'",
+                     f"{yel}print{syel}({orn}'Python es ' {reset}+ {cya}x{syel})",
+                     "",
+                     f"{yel}myfunc{syel}()",
+                     f"{grs}# Eso dará Maravilloso, ya que la variable x de dentro de la función es Maravilloso",
+                     "",
+                     f"{yel}print{syel}({orn}'Python es ' {reset}+ {cya}x{syel})",
+                     f"{grs}# Esto dará Horrible, ya que la variable x esta fuera de la función"])
         print()
         input("Presiona Enter para continuar...")
-        os.system("cls")
-        print("Entonces, para poder usar una variable global dentro de una función hacemos:")
+        
+        os.system('cls' if os.name == 'nt' else 'clear')
+        rounded_box([f"{grs}Entonces, para poder usar una variable dentro de una función hacemos:"], g_border)
         print()
         time.sleep(2)
-        print("def myfunc()")
-        print("   global x")
-        print("   x = 'Maravilloso'")
-        print()
-        print("myfunc()")
-        print("")
-        print("print('Python es ' + x)")
+        rounded_box([f"{ble}def {yel}myfunc{syel}()",
+                     f"   {ble}global {cya}x",
+                     f"   {cya}x {reset}= {orn}'Maravilloso'",
+                     "",
+                     f"{yel}myfunc{syel}()",
+                     "",
+                     f"{yel}print{syel}({orn}'Python es ' {reset}+ {cya}x{syel})",
+                     f"{grs}# Esto dará 'Python es Maravilloso', ya que la variable x es global"], b_border)
         time.sleep(1)
         print()
         input("Presiona Enter para continuar...")
         func_variable(rounded_box)
     elif option == "8":
-        os.system("cls")
+        os.system('cls' if os.name == 'nt' else 'clear')
         from app import menu
         menu()

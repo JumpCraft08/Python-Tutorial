@@ -5,6 +5,7 @@ from func_print import func_1
 yel = "\033[33m" # [Amarillo] Bloques (print, input, etc)
 syel = "\033[93m" # [Amarillo brillante] Parentesis
 cya = "\033[36m" # [Cyan] Variables
+ble = "\033[34m" # [Azul oscuro] Funciones
 sgrn = "\033[92m" # [Verde Brillante] Numeros
 orn = "\033[38;5;94m" # [Naranja] Texto
 b_border = '\033[34m' # Borde azul
@@ -29,15 +30,15 @@ def rounded_box(lines, border_color):
 
 def menu():
     while True:
-        os.system("cls")
-        print("  _____       _   _                   _______    _             _       _ ")
-        print(" |  __ \     | | | |                 |__   __|  | |           (_)     | |")
-        print(" | |__) |   _| |_| |__   ___  _ __      | |_   _| |_ ___  _ __ _  __ _| |")
-        print(" |  ___/ | | | __| '_ \ / _ \| '_ \     | | | | | __/ _ \| '__| |/ _` | |")
-        print(" | |   | |_| | |_| | | | (_) | | | |    | | |_| | || (_) | |  | | (_| | |")
-        print(" |_|    \__, |\__|_| |_|\___/|_| |_|    |_|\__,_|\__\___/|_|  |_|\__,_|_|")
-        print("         __/ |                                                           ")
-        print("        |___/                                                            ")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(r"  _____       _   _                   _______    _             _       _ ")
+        print(r" |  __ \     | | | |                 |__   __|  | |           (_)     | |")
+        print(r" | |__) |   _| |_| |__   ___  _ __      | |_   _| |_ ___  _ __ _  __ _| |")
+        print(r" |  ___/ | | | __| '_ \ / _ \| '_ \     | | | | | __/ _ \| '__| |/ _` | |")
+        print(r" | |   | |_| | |_| | | | (_) | | | |    | | |_| | || (_) | |  | | (_| | |")
+        print(r" |_|    \__, |\__|_| |_|\___/|_| |_|    |_|\__,_|\__\___/|_|  |_|\__,_|_|")
+        print(r"         __/ |                                                           ")
+        print(r"        |___/                                                            ")
         print()
         print("[1] Basicos de Python")
         print("[2] Variables y tipos de datos")
